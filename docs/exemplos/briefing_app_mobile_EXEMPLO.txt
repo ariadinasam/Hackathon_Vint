@@ -1,0 +1,4 @@
+EXEMPLO SINTÉTICO — Novo aplicativo mobile de agendamento para órgão público.
+Precisamos de desenvolvedores React Native e TypeScript, com Node.js no back-end e MongoDB.
+Figma é desejável para apoiar o time de UX/UI. Testes com Jest são um diferencial.
+Projeto de Desenvolvimento em Scrum, 6 meses a partir de janeiro de 2027, tempo integral. Júnior ou Pleno.

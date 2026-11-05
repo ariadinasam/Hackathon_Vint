@@ -1,0 +1,17 @@
+{
+ "/api/auth/estado": "estado.json",
+ "/api/me": "me.json",
+ "/api/meta": "meta.json",
+ "/api/dashboard": "dashboard.json",
+ "/api/buscas": "buscas.json",
+ "/api/buscas/3": "busca.json",
+ "/api/buscas/1": "busca_conf.json",
+ "/api/buscas/1/relatorio": "relatorio.json",
+ "/api/buscas/1/candidatos/interno/66": "det_conf.json",
+ "/api/buscas/3/candidatos/interno/271": "det_rem.json",
+ "/api/buscas/3/candidatos/interno/129": "det_pdi.json",
+ "/api/buscas/3/candidatos/ihiring/29": "det_ext.json",
+ "/api/usuarios": "usuarios.json",
+ "/api/me/sessoes": "sessoes.json",
+ "/api/base/fontes": "base_fontes.json"
+}

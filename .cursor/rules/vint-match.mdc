@@ -1,0 +1,12 @@
+---
+description: Convenções do projeto VINT Match
+alwaysApply: true
+---
+- Banco SGD é SOMENTE LEITURA: só SELECT em db.py/sgd.py (há teste que bloqueia). Escritas só em store.py (data/app.db).
+- Não logar nomes de pessoas; usar ids. Nunca enviar nomes à API de IA (Gemini/Claude) (usar pseudônimos C1, C2…).
+- Dados sintéticos devem ser marcados como tal (ex.: talentos InHire).
+- Regras de negócio de matching ficam em app/matching.py; pesos em W.
+- Front sem build: app/static/spa.js + vint.css (design system do design Vint_Global; tokens --primary etc.). Telas por hash.
+- Rodar testes: python -m tests.test_smoke
+- Provedor de IA em app/llm.py (LLM_PROVIDER). Servidor MCP em mcp_server.py: manter pseudonimização por padrão.
+- Testes: python -m tests.test_smoke e python -m tests.test_api

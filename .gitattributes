@@ -1,0 +1,10 @@
+# Texto com fim de linha normalizado; scripts do Windows sempre com CRLF
+* text=auto
+*.bat text eol=crlf
+*.sqlite binary
+*.db binary
+*.png binary
+*.ico binary
+*.woff2 binary
+*.docx binary
+*.pdf binary

@@ -1,0 +1,51 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.2.0, pluggy-1.7.0
+rootdir: /sessions/rcw-01edkxrav49qtw3ctngb4yem/mnt/Hackathon_Vint
+configfile: pytest.ini
+testpaths: tests
+plugins: cov-7.1.0, anyio-4.16.0
+collected 51 items
+
+tests/test_api.py test_api: fluxo completo OK
+.
+tests/test_cenario_jose.py ..
+cruzamento SGD + iHiring: mediana 146 ms, máx 170 ms (279 colaboradores, 300 talentos)
+.
+tests/test_smoke.py ..........
+tests/test_unidades.py .....................................
+
+- generated xml file: /sessions/rcw-01edkxrav49qtw3ctngb4yem/mnt/Hackathon_Vint/docs/testes/junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.10.12-final-0 _______________
+
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+app/__init__.py       0      0   100%
+app/auth.py          77      6    92%   27, 32-33, 56, 70, 102
+app/buscas.py       319     25    92%   31-32, 46, 58, 68, 81, 88, 129-132, 270, 313, 354, 357-363, 401-403, 422, 484, 492
+app/config.py        34      2    94%   42-43
+app/db.py            51     17    67%   45-54, 74-81
+app/extract.py      127     28    78%   22-24, 30-31, 33-36, 59, 67, 99, 110-112, 124-136, 142-147, 157-158, 167
+app/llm.py          300     62    79%   96-97, 118-120, 122-126, 142-143, 165, 167, 187-189, 195, 207, 214, 218, 221-223, 241, 244-249, 254-260, 275-276, 286, 297, 309-310, 321-323, 326-332, 341-346, 380, 405, 410, 420
+app/main.py         466     72    85%   47, 57, 62, 69, 104, 124, 126, 131, 149, 169, 208, 226-227, 232-233, 258, 260, 276, 278, 293-298, 349-350, 372-386, 440, 446, 459, 467, 469, 477, 490, 503, 517, 527-537, 549, 558-561, 563, 591, 594, 607, 616
+app/matching.py     246     11    96%   35, 39, 127, 133, 135, 200, 206-210, 294
+app/rag.py          257     42    84%   99-100, 174-176, 216, 254-264, 268-274, 276-280, 285-287, 289, 298-299, 328, 337, 341-353
+app/sgd.py          106      0   100%
+app/store.py         35      0   100%
+app/textutil.py      36      0   100%
+-----------------------------------------------
+TOTAL              2054    265    87%
+Coverage HTML written to dir docs/testes/cobertura
+Coverage JSON written to file /sessions/rcw-01edkxrav49qtw3ctngb4yem/tmp/vintmatch_cov_kx4a2d6t/cov.json
+============================= slowest 10 durations =============================
+9.88s call     tests/test_api.py::test_fluxo_completo
+3.00s call     tests/test_cenario_jose.py::test_desempenho_do_cruzamento_das_bases
+0.72s call     tests/test_smoke.py::test_rag
+0.62s call     tests/test_smoke.py::test_ia_merge_mock
+0.43s call     tests/test_smoke.py::test_matching
+0.20s call     tests/test_unidades.py::test_mais_dedicacao_exigida_nunca_aumenta_disponiveis
+0.17s call     tests/test_cenario_jose.py::test_jose_ve_alternativas_internas_e_externas
+0.17s call     tests/test_cenario_jose.py::test_jose_encontra_quem_atende_e_esta_livre
+0.11s call     tests/test_unidades.py::test_ia_falhando_nao_quebra_o_ranking
+0.08s call     tests/test_smoke.py::test_docx
+============================= 51 passed in 23.58s ==============================

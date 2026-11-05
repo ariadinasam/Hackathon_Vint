@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vint_Match (legado)</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">VINT<b>_</b>Match</span>
+    <span class="sub">Matchmaking de talentos · SGD + InHire</span>
+  </div>
+  <div class="status">
+    <span id="st-fonte" class="pill">carregando…</span>
+    <span id="st-ia" class="pill"></span>
+    <label class="pill toggle"><input type="checkbox" id="mask"> Ocultar nomes</label>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="match">Matchmaking</button>
+  <button class="tab" data-tab="rag">Pergunte à base</button>
+</nav>
+
+<main id="tab-match" class="layout">
+  <form id="form" class="panel form" autocomplete="off">
+    <h2>Requisitos do projeto</h2>
+
+    <div class="drop" id="drop">
+      <input type="file" id="file" accept=".pdf,.docx,.txt,.md" hidden>
+      <div><strong>Briefing do projeto</strong> (PDF, DOCX ou TXT)</div>
+      <div class="muted">Arraste aqui ou <a href="#" id="pick">escolha um arquivo</a> — a IA lê e preenche o formulário.</div>
+      <div id="file-status" class="muted small"></div>
+    </div>
+
+    <label>Descrição do projeto (texto livre)
+      <textarea id="texto" rows="4" placeholder="Ex.: Sustentação do portal de serviços da SEFAZ em Laravel + Vue, banco PostgreSQL, Kanban, início em dezembro, 80% de dedicação por 4 meses…"></textarea>
+    </label>
+    <button type="button" id="btn-extract-text" class="btn ghost small">Extrair requisitos do texto</button>
+
+    <label>Skills necessárias</label>
+    <div class="skill-add">
+      <input id="skill-input" list="catalogo" placeholder="Digite e pressione Enter (ex.: PHP)">
+      <datalist id="catalogo"></datalist>
+      <button type="button" id="skill-btn" class="btn small">Adicionar</button>
+    </div>
+    <div id="skills" class="skills"></div>
+
+    <div class="grid3">
+      <label>Início<input type="month" id="inicio"></label>
+      <label>Duração (meses)<input type="number" id="duracao" min="1" max="24" value="3"></label>
+      <label>Disp. mínima <output id="disp-out">50%</output>
+        <input type="range" id="disp" min="0" max="100" step="10" value="50"></label>
+    </div>
+
+    <label>Senioridade (opcional)</label>
+    <div id="sens" class="checks"></div>
+
+    <div class="grid2">
+      <label>Tipo de serviço<select id="tipo"><option value="">Qualquer</option></select></label>
+      <label>Metodologia<select id="metod"><option value="">Qualquer</option></select></label>
+    </div>
+
+    <div class="checks">
+      <label class="check"><input type="checkbox" id="externos" checked> Incluir talentos InHire</label>
+      <label class="check"><input type="checkbox" id="usar-ia" checked> Refinar com IA</label>
+    </div>
+
+    <button type="submit" class="btn primary big" id="btn-match">Encontrar talentos</button>
+    <p class="muted small">Nenhum dado de colaborador é digitado: tudo vem do SGD (somente leitura).</p>
+  </form>
+
+  <section id="results" class="results">
+    <div class="empty">
+      <h2>Como alocar o talento certo na hora certa?</h2>
+      <p>Descreva o projeto ou envie o briefing. Em segundos você recebe o ranking com score, disponibilidade mês a mês,
+        histórico em projetos parecidos, alertas de remanejamento e sugestões de PDI.</p>
+    </div>
+  </section>
+</main>
+
+<main id="tab-rag" class="layout single" hidden>
+  <section class="panel">
+    <h2>Pergunte à base de conhecimento</h2>
+    <p class="muted">Anotações do cliente, documentação do banco, relatórios de qualidade e fichas de skills e demandas do SGD.</p>
+    <form id="rag-form" class="rag-form">
+      <input id="rag-q" placeholder="Ex.: Quais skills são mais pedidas nas demandas? Quais os riscos de dados do SGD?">
+      <button class="btn primary">Perguntar</button>
+    </form>
+    <div class="suggest">
+      <button class="chip" data-q="Quais são as skills mais exigidas pelas demandas?">Skills mais exigidas</button>
+      <button class="chip" data-q="Como a disponibilidade de um colaborador é calculada?">Cálculo de disponibilidade</button>
+      <button class="chip" data-q="Quais problemas de qualidade de dados afetam o matching?">Riscos de dados</button>
+      <button class="chip" data-q="Quem tem PostgreSQL avançado e quais demandas pedem PostgreSQL?">PostgreSQL</button>
+    </div>
+    <div id="rag-out"></div>
+  </section>
+</main>
+
+<div id="toast" class="toast" hidden></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
